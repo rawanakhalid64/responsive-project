@@ -1,0 +1,60 @@
+*{  padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    
+   }
+   body{
+    background-color: #8a8a8a;
+    color: #fff;
+   }
+/* .custom-tooltip-class{
+    --bs-tooltip-bg: var(--bs-danger);
+} */
+.copyBtn{
+    position: relative;
+    margin-bottom: 10px;
+}
+.copyBtn::after{
+    content: '';
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgb(83, 103, 154) transparent;
+    bottom: -38%;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .4s;
+    text-shadow: 2px 2px 2px #000;
+}
+.copyBtn:hover::after ,.copyBtn:hover::before {
+    opacity: 1;
+    transition: .4s;
+
+}
+.copyBtn::before{
+    position: absolute;
+    content: "Copy to clipboard";
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: rgb(120, 116, 180);
+    color: #fff;
+    bottom: calc(-38% - 45px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .4s;
+}
+code{
+    font-size: 1.2rem;
+}
+.copyBtn:active::before{
+    content: "Copy";
+    bottom: calc(-38% - 25px);
+    height: 25px;
+    /* transition: 0s; */
+} 
